@@ -14,14 +14,14 @@ var romanObject = {
 var romanArray = Object.keys(romanObject)
 // functions 
 function convertromToDec() {
-  toUpper = function(array){ 
+  var toUpper = function (array) {
     return array.toUpperCase();
   }
-  counterForOutPut = 0
+  var counterForOutPut = 0
   var arrayFromInputValue = Array.from(inputRoman.value).map(toUpper)
   arrayFromInputValue.forEach(function (rom, index) {
     rom = rom.toUpperCase()
-    if (romanArray.includes(String(rom))) {
+    if (romanArray.includes(rom)) {
       counterForOutPut += romanObject[rom]
     }
     if (rom == 'I' && romanArray.includes(arrayFromInputValue[index + 1]) && arrayFromInputValue[index + 1] != 'I') {
